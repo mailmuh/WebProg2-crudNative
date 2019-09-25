@@ -2,54 +2,35 @@
 <html>
 <head>
 	<title>Tambah Data</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<a href="index.php">Kembali</a>
-    <br/><br/>
-    <?php 
-	if(isset($_GET['nama'])){
-		if($_GET['nama'] == ""){
-			echo "<h4 style='color:red'>isi kolom nama !</h4>";
-		}
-    }
-    if(isset($_GET['email'])){
-		if($_GET['email'] == ""){
-			echo "<h4 style='color:red'>isi kolom email !</h4>";
-		}
-    }
-    if(isset($_GET['usrname'])){
-		if($_GET['usrname'] == ""){
-			echo "<h4 style='color:red'>isi kolom username !</h4>";
-		}
-    }
-    if(isset($_GET['pwd'])){
-		if($_GET['pwd'] == ""){
-			echo "<h4 style='color:red'>isi kolom password !</h4>";
-		}
-	}
-	?>
+    <br/>
+    <div class="form-group col-md-6">
+        <a href="index.php">Kembali</a>
+    </div>
     <form action="tambah.php" method="post" name="form1">
         <table width="25%" border="0">
-            <tr> 
-                <td>Name</td>
-                <td><input type="text" name="name"></td>
-            </tr>
-            <tr> 
-                <td>Email</td>
-                <td><input type="text" name="email"></td>
-            </tr>
-            <tr> 
-                <td>Username</td>
-                <td><input type="text" name="username"></td>
-            </tr>
-            <tr> 
-                <td>Password</td>
-                <td><input type="text" name="password"></td>
-            </tr>
+            <div class="form-group col-md-6">
+                <label>Nama</label>
+                <input name="name" type="text" class="form-control" placeholder="Masukkan Nama" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Email</label>
+                <input name="email" type="text" class="form-control" placeholder="Masukkan Email" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Username</label>
+                <input name="username" type="text" class="form-control" placeholder="Masukkan Username" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Password</label>
+                <input name="password" type="text" class="form-control" placeholder="Masukkan Password" required>
+            </div>
             <tr> 
                 <td></td>
                 <td><input type="submit" name="Submit" value="Add"></td>
-            </tr>
+            </tr> 
         </table>
     </form>
 
