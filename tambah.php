@@ -7,7 +7,7 @@
 <body>
     <br/>
     <div class="form-group col-md-6">
-        <a href="index.php">Kembali</a>
+        <a href="index.php"><button class="btn btn-info">Kembali</button></a>
     </div>
     <form action="tambah.php" method="post" name="form1">
         <table width="25%" border="0">
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label>Password</label>
-                <input name="password" type="text" class="form-control" placeholder="Masukkan Password" required>
+                <input name="password" type="password" class="form-control" placeholder="Masukkan Password" required>
             </div>
             <tr> 
                 <td></td>

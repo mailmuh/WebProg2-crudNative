@@ -1,7 +1,5 @@
 <?php
-// import koneksi
 include_once("config.php");
-// proses update
 if(isset($_POST['update']))
 {   
     $id = $_POST['id'];
@@ -18,17 +16,12 @@ if(isset($_POST['update']))
     }elseif ($pwd == "") {
         header("location:tambah.php?pwd=");        
     } else {
-    // query sql update data
     $result = mysqli_query($mysqli, "UPDATE user SET nama='$name',email='$email',username='$usrname', password='$pwd' WHERE username= '$id'");
-// setelah proses menhapus maka akan langsung diarahkan ke halaman awal
     header("Location: index.php");}
 }
 ?>
 <?php
-// menampilkan data user terpilih berdasarkan username
-// mengambil dATA id dari yang diakses saat membuka halaman ini, id berupa data username 
 $id = $_GET['id'];
-//query menampilkan data user terpilih
 $result = mysqli_query($mysqli, "SELECT * FROM user WHERE username = '$id'");
 while($data = mysqli_fetch_array($result))
 {
@@ -47,7 +40,7 @@ while($data = mysqli_fetch_array($result))
 <body>
     <br/>
     <div class="form-group col-md-6">
-        <a href="index.php">Kembali</a>
+        <a href="index.php"><button class="btn btn-info">Kembali</button></a>
     </div>
     <form action="edit.php" method="post" name="Update">
         <table width="25%" border="0">
@@ -65,7 +58,7 @@ while($data = mysqli_fetch_array($result))
             </div>
             <div class="form-group col-md-6">
                 <label>Password</label>
-                <input name="password" type="text" class="form-control" value=<?php echo $pwd?> required>
+                <input name="password" type="password" class="form-control" value=<?php echo $pwd?> required>
             </div>
             <tr> 
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>

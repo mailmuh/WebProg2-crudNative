@@ -18,7 +18,7 @@ $result = mysqli_query( $mysqli, "select * from user order by nama");
  	<div class="masonry-item col-md-12">
 	    <div class="bgc-white bd bdrs-3 p-20 mB-20">
 	        <div class="c-btn">
- 				<a href="tambah.php">Add New User</a>
+ 				<a href="tambah.php"><button class="btn btn-primary">Add New User</button></a>
 	        </div><br/>
 		 	<table class="table table-striped table-bordered">
 		 		<thead>
@@ -29,11 +29,12 @@ $result = mysqli_query( $mysqli, "select * from user order by nama");
 		 			<th>Email</th>
 		 			<th>Action</th>
 		 		</thead>
-		 		<?php 
+		 		<?php
+		 		$i=1; 
 		 		while($data = mysqli_fetch_array($result)) {
-		 			$i=1;
+		 			
 		 			echo "<tr>";
-					echo "<td>".$i."</td>"; 			        
+					echo "<td>".$i++."</td>"; 			        
 			        echo "<td>".$data['nama']."</td>";
 			        echo "<td>".$data['username']."</td>";
 			        echo "<td>".$data['password']."</td>";
